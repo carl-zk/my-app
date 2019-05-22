@@ -1,0 +1,10 @@
+web:
+  image: nginx
+  volumes:
+    - ./web:/usr/share/nginx/html/:ro
+  ports:
+    - "8080:80"
+  environment:
+    - NGINX_HOST=my-web
+    - NGINX_PORT=80
+  command: /bin/bash -c "exec nginx -g 'daemon off;'"
